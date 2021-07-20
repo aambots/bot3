@@ -21,6 +21,7 @@
   "homepage": "https://github.com/aambots/bot3#readme",
   "dependencies": {
     "skill-serve": "^0.0.6",
-    "skill-updater": "^0.0.4"
+    "skill-updater": "^0.0.4",
+    "skill-webcredits": "^0.0.3"
   }
 }
