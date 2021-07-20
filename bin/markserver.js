@@ -3,8 +3,6 @@
 const fs = require('fs')
 const homedir = require('os').homedir()
 const exec = require('child_process').exec
-const handler = require('serve-handler')
-const http = require('http')
 
 function getPrivKey() {
   try {
@@ -57,10 +55,10 @@ function findValueByPrefix(object, prefix) {
   }
 }
 
-function withdrawToAddress(address) {
+function withdrawToAddress(address, pubkey) {
   const amount = 10
   const fee = 10
-  const pubkey = 'bUnZHeiSuxervBUWBGsKp73Nxj67RnHeri'
+  pubkey = pubkey || 'bUnZHeiSuxervBUWBGsKp73Nxj67RnHeri'
   const serverCmd = 'ssh -i ~/.ssh/id_btm ubuntu@157.90.144.229'
 
   // validate address
@@ -149,4 +147,10 @@ function txoparse(txo) {
   return ret
 }
 
-withdrawToAddress('bYr2oQVDgV7g2DVqtwUDtkywYGAuBvs52A')
+var serverKey = process.argv[2] || 'bYr2oQVDgV7g2DVqtwUDtkywYGAuBvs52A'
+var pubkey = process.argv[3] || 'bUnZHeiSuxervBUWBGsKp73Nxj67RnHeri'
+
+console.log('serverKey', serverKey)
+console.log('pubkey', pubkey)
+
+withdrawToAddress(serverKey, pubkey)
