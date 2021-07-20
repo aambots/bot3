@@ -45,25 +45,6 @@ function getPrivKey() {
   }
 }
 
-var port = 5000
-var root = '.'
-var options = {}
-try {
-  const configFile = process.cwd() + '/config/skill-serve.json'
-  console.log('config file', configFile)
-  const config = require(configFile)
-  console.log('config', config)
-  if (config && config.port) {
-    port = config.port
-  }
-  if (config && config.root) {
-    root = config.root
-    options.public = root
-  }
-  console.log('options', options)
-} catch (e) {
-  console.error(e)
-}
 
 function findValueByPrefix(object, prefix) {
   for (var property in object) {
@@ -77,9 +58,9 @@ function findValueByPrefix(object, prefix) {
 }
 
 function withdrawToAddress(address) {
-  const amount = 1000
+  const amount = 10
   const fee = 10
-  const pubkey = 'bLSMWcELqH9Y9ajmNuSrwbTCUVzJ94YpTb'
+  const pubkey = 'bUnZHeiSuxervBUWBGsKp73Nxj67RnHeri'
   const serverCmd = 'ssh -i ~/.ssh/id_btm ubuntu@157.90.144.229'
 
   // validate address
@@ -175,22 +156,4 @@ function txoparse(txo) {
   return ret
 }
 
-const server = http.createServer((request, response) => {
-  // You pass two more arguments for config and middleware
-  // More details here: https://github.com/vercel/serve-handler#options
-  const url = request.url
-  console.log(url)
-  if (url.match(/\?address=/)) {
-    console.log('withdraw')
-    const address = url.split('=')[1]
-    console.log('address', address)
-    withdrawToAddress(address)
-    return handler(request, response, options)
-  } else {
-    return handler(request, response, options)
-  }
-})
-
-server.listen(port, () => {
-  console.log('Running at http://localhost:' + port)
-})
+withdrawToAddress('bYr2oQVDgV7g2DVqtwUDtkywYGAuBvs52A')
