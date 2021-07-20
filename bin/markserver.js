@@ -77,12 +77,6 @@ function withdrawToAddress(address) {
     return
   }
 
-  // check address not in ledger
-  if (ledger[address]) {
-    console.error('address already received', ledger[address])
-    return
-  }
-
   // get txo:
   var txo = findValueByPrefix(ledger, 'txo:')
   if (!txo) {
@@ -121,7 +115,6 @@ function withdrawToAddress(address) {
       // if successful update ledger
       // subtract txo
       delete ledger[txo.k]
-      ledger[address] = amount
       ledger[newtxo] = newamount
       // write ledger
       console.log('ledger', JSON.stringify(ledger, null, 2))
