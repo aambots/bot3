@@ -1,0 +1,43 @@
+  <html>
+  <head>
+    <link rel="stylesheet" href="css/spuxblue.css" />
+    <meta http-equiv="refresh" content="300" />
+
+    <script type="application/ld+json" id="data">
+      {
+      "name": "@aambots/bot3",
+      "version": "0.0.2",
+      "description": "bot3",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "server": "pm2 start --name server ./node_modules/skill-serve/bin/serve.js",
+        "updater": "pm2 start --name updater ./node_modules/skill-updater/bin/deploy.sh --restart-delay=300000"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/aambots/bot3.git"
+      },
+      "keywords": [],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/aambots/bot3/issues"
+      },
+      "homepage": "https://github.com/aambots/bot3#readme",
+      "dependencies": {
+        "skill-markserver": "^0.0.2",
+        "skill-profile": "^0.0.1",
+        "skill-serve": "^0.0.6",
+        "skill-updater": "^0.0.4",
+        "skill-webcredits": "^0.0.3"
+      }
+    }
+    </script>
+    
+
+    <script type="module" src="js/app.js"></script>
+  </head>
+  <body></body>
+</html>
+
