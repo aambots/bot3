@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/aambots/bot3#readme",
   "dependencies": {
+    "jdenticon": "^3.1.0",
     "skill-markserver": "^0.0.2",
     "skill-profile": "^0.0.1",
     "skill-serve": "^0.0.6",
