@@ -28,7 +28,7 @@ function renderAll() {
       console.log(i)
       var skill = i[0].substring(6)
       skill = skill[0].toUpperCase() + skill.substring(1)
-      return html`<div class="row">${skill} : <a href="https://npm.com/pakage/${i[1]}">${i[1]}</a></div>`
+      return html`<div class="row">${skill} : <a href="https://www.npmjs.com/package/${i[0]}">${i[1]}</a></div>`
     })}
       
       <h5>Vital Stats</h5>
