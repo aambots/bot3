@@ -21,7 +21,7 @@ function renderAll() {
       <div class="row">PublicKey: bUnZHeiSuxervBUWBGsKp73Nxj67RnHeri
       </div>
       <div class="row">Block: gitmark:8afb94f4dc1d3a65bdefb84fd02b957563a46f854a9393573325:0</div>
-      <div class="row">Birth: 7/18/2021, 7:05:05 PM</div>
+      <div class="row">Birth: 18/7/2021, 19:05:05</div>
 
       <h5>Skills</h5>
       ${Object.entries(di.data.dependencies).map(i => {
