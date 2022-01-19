@@ -18,6 +18,7 @@ function renderAll() {
 
       <h5>Genesis</h5>
 
+      <div class="row">Nostr ID: nostr:key:15e9d5257b40a0f562383efe2046a65edac5b489761b99ca9c127f9159ccfd64</div>
       <div class="row">PublicKey: bUnZHeiSuxervBUWBGsKp73Nxj67RnHeri
       </div>
       <div class="row">Block: gitmark:8afb94f4dc1d3a65bdefb84fd02b957563a46f854a9393573325:0</div>
